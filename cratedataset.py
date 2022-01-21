@@ -16,10 +16,7 @@ while True:
     faces=detector.detectMultiScale(gray, scaleFactor=1.2, minNeighbors=5, minSize=(100, 100), flags=cv2.CASCADE_SCALE_IMAGE)
     for(x,y,w,h) in faces:
         i=i+1
-         """
-        imwrite kısmında dosya yolunu kontrol ediniz !!!!!!!!!!!
 
-        """
         cv2.imwrite("/home/pi/Desktop/egitim/yuzverileri/face-" + kisi_id + '.' + str(i) + ".jpg", gray[y:y + h , x :x + w])
         cv2.rectangle(img, (x , y), (x + w, y + h), (225, 0, 0), 2)
         cv2.imshow('resim', img[y :y + h, x :x + w])
